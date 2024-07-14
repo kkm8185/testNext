@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation"
 import Link from "next/link"
 import IconButton from "@/components/elements/IconButton"
 import { cn } from "@/lib/utils"
+import { dummyPlaylistArray } from "@/lib/dummyData"
+import PlaylistNav from "@/components/elements/PlaylistNav"
 const Navigator = () => {
   const pathname = usePathname()
   const routes = useMemo(() => {
@@ -30,7 +32,7 @@ const Navigator = () => {
               <Link
                 key={idx}
                 href={data.href}
-                className={cn("p-2 flex flex-row  items-center gap-5 hover:bg-neutral-700 rounded-lg", data.isActive && "bg-neutral-700")}
+                className={cn("p-2 flex flex-row  items-center gap-5 hover:bg-neutral-700 rounded-lg", data.isActive && "bg-neutral-800")}
               >
                 {data.icon}
                 <div>{data.label}</div>
@@ -43,10 +45,17 @@ const Navigator = () => {
         <div className="border"></div>
       </section>
       <section className="px-6">
-        <div className="hover:bg-neutral-600 cursor-pointer flex flex-row gap-2 my-6 justify-center items-center bg-neutral-700 rounded-2xl p-2 font-thin">
+        <div className="hover:bg-neutral-700 cursor-pointer flex flex-row gap-2 my-6 justify-center items-center bg-neutral-800 rounded-2xl p-2 font-thin">
           <FiPlus size={24} />
           <span>새 재생목록</span>
         </div>
+      </section>
+      <section>
+        <ul className="flex flex-col gap-2 ">
+          {dummyPlaylistArray.map((playlist, idx) => (
+            <PlaylistNav playlist={playlist} key={idx} />
+          ))}
+        </ul>
       </section>
     </div>
   )

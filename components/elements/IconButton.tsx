@@ -21,7 +21,6 @@ const IconButton = ({ icon, onClickIcon = () => {}, width, height, align = "cent
   const clonedIcon = React.cloneElement(icon as React.ReactElement, {
     className: classNames((icon as React.ReactElement).props.className, isClicked ? "scale-90" : "scale-100"),
   })
-  console.log("align : ", align, align === "center" ? "justify-center" : `justify-${align}`)
   return (
     <div
       className={cn(

@@ -1,3 +1,4 @@
+import Header from "@/components/elements/Header"
 import React from "react"
 
 const layout = ({
@@ -5,7 +6,11 @@ const layout = ({
 }: Readonly<{
   children: React.ReactNode
 }>) => {
-  return <div>{children}</div>
+  return (
+    <div className="h-full w-full">
+      <Header>{children}</Header>
+    </div>
+  )
 }
 
 export default layout
