@@ -4,8 +4,13 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import React, { useState } from "react"
+import { IoCloseOutline } from "react-icons/io5"
 import { RxHamburgerMenu } from "react-icons/rx"
-const Logo = () => {
+type Props = {
+  isInDrawer?: boolean
+  onClickClose?: any
+}
+const Logo = ({ isInDrawer = false, onClickClose = () => {} }: Props) => {
   const { push } = useRouter()
   const [isClicked, setIsClicked] = useState(false)
 
@@ -19,10 +24,16 @@ const Logo = () => {
   const onClickLogo = () => {
     push("/")
   }
-  const logoIcon = <RxHamburgerMenu size={24} />
+
+  const hamburgerIcon = <RxHamburgerMenu size={24} />
+  const closeIcon = <IoCloseOutline size={30} />
   return (
     <section className="flex flex-row gap-3 items-center">
-      <IconButton width={36} height={36} icon={logoIcon} onClickIcon={onClickLogo} />
+      {isInDrawer ? (
+        <IconButton width={36} height={36} icon={closeIcon} onClickIcon={onClickClose} />
+      ) : (
+        <IconButton width={36} height={36} icon={hamburgerIcon} onClickIcon={onClickLogo} />
+      )}
 
       <div className="cursor-pointer" onClick={onClickLogo}>
         <Image src="/main-logo.svg" width={100} height={30} alt="logo" />

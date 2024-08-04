@@ -8,7 +8,7 @@ const Sidebar = ({
 }>) => {
   return (
     <div className="flex flex-row h-full">
-      <nav className="w-[240px] border-r-[1px] border-neutral-500">
+      <nav className="hidden lg:block w-[240px] border-r-[1px] border-neutral-500">
         <div className="p-[24px]">
           <Logo />
         </div>
