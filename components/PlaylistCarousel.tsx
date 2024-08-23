@@ -1,17 +1,29 @@
-import React from "react"
-import { IPlaylist } from "@/types"
+import React from "react";
+import { IPlaylist } from "@/types";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import PlayListCard from "@/components/PlayListCard"
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import PlayListCard from "@/components/PlayListCard";
 interface PlaylistCarouselProps {
-  title: string
-  subTitle?: string
-  Thumbnail?: React.ReactNode
-  playlistArray?: IPlaylist[]
-  children?: React.ReactNode
+  title: string;
+  subTitle?: string;
+  Thumbnail?: React.ReactNode;
+  playlistArray?: IPlaylist[];
+  children?: React.ReactNode;
 }
-const PlaylistCarousel = ({ title, subTitle, Thumbnail, playlistArray, children }: PlaylistCarouselProps) => {
+const PlaylistCarousel = ({
+  title,
+  subTitle,
+  Thumbnail,
+  playlistArray,
+  children,
+}: PlaylistCarouselProps) => {
   return (
     <div className="w-full">
       <Carousel>
@@ -31,15 +43,15 @@ const PlaylistCarousel = ({ title, subTitle, Thumbnail, playlistArray, children 
           </div>
         </div>
 
-        <CarouselContent>
+        <CarouselContent className="mt-4">
           {playlistArray?.map((playlist, idx) => {
             return (
-              <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/5">
                 <div className="p-1">
                   <PlayListCard playlist={playlist} />
                 </div>
               </CarouselItem>
-            )
+            );
           })}
           {/* {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -51,7 +63,7 @@ const PlaylistCarousel = ({ title, subTitle, Thumbnail, playlistArray, children 
         </CarouselContent>
       </Carousel>
     </div>
-  )
-}
+  );
+};
 
-export default PlaylistCarousel
+export default PlaylistCarousel;
