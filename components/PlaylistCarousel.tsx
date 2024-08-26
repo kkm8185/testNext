@@ -31,8 +31,12 @@ const PlaylistCarousel = ({
           <article className="flex flex-row gap-3">
             {Thumbnail}
             <div>
-              <div>{subTitle && <div className="text-neutral-500">{subTitle}</div>}</div>
-              <div className="text-[34px] font-bold leading-[34px]">{title}</div>
+              <div>
+                {subTitle && <div className="text-neutral-500">{subTitle}</div>}
+              </div>
+              <div className="text-[34px] font-bold leading-[34px]">
+                {title}
+              </div>
             </div>
           </article>
           <div className="relative left-[-45px]">
@@ -46,7 +50,10 @@ const PlaylistCarousel = ({
         <CarouselContent className="mt-4">
           {playlistArray?.map((playlist, idx) => {
             return (
-              <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/5">
+              <CarouselItem
+                key={idx}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
+              >
                 <div className="p-1">
                   <PlayListCard playlist={playlist} />
                 </div>

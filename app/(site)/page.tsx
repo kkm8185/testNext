@@ -38,10 +38,16 @@ const page = async () => {
             />
           </div>
           <div className="mt-12">
-            <PlaylistCarousel playlistArray={[...dummyPlaylistArray3]} title="커뮤니티 제공" />
+            <PlaylistCarousel
+              playlistArray={[...dummyPlaylistArray3]}
+              title="커뮤니티 제공"
+            />
           </div>
           <div className="mt-12">
-            <PlaylistCarousel playlistArray={[...dummyPlaylistArray4]} title="커버 및 리믹스" />
+            <PlaylistCarousel
+              playlistArray={[...dummyPlaylistArray4]}
+              title="커버 및 리믹스"
+            />
           </div>
         </div>
       </div>
