@@ -1,10 +1,10 @@
-import Logo from "@/components/elements/Logo"
-import React from "react"
-import Navigator from "@/components/elements/Navigator"
+import Logo from "@/components/elements/Logo";
+import React from "react";
+import Navigator from "@/components/elements/Navigator";
 const Sidebar = ({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) => {
   return (
     <div className="flex flex-row h-full">
@@ -16,9 +16,9 @@ const Sidebar = ({
           <Navigator />
         </div>
       </nav>
-      <div className="flex-1">{children}</div>
+      <div className="w-full lg:w-[calc(100%-240px)]">{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
