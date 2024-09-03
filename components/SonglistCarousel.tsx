@@ -22,7 +22,7 @@ interface SonglistCarouselProps {
 }
 const SongColumn = ({ songList = [] }: { songList: ITopSong[] }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       {songList.map((data, idx) => {
         return <SongCard key={idx} song={data} />;
       })}

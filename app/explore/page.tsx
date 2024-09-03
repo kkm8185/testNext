@@ -23,6 +23,8 @@ const page = async () => {
         <div className="mt-12">
           <SonglistCarousel songListTop10={songListTop10Array} title="인기곡" />
         </div>
+        <div className="mt-12" />
+        <div className="mt-12" />
       </div>
     </PagePadding>
   );
